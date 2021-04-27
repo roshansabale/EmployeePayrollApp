@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/new_payroll_form.css">
     <title>Employee Payroll Form</title>
-    <script defer src="../js/payroll_form.js"></script>
 </head>
 
 <body>
@@ -27,6 +26,7 @@
             <div class="row-content">
                 <label class="label text" for="name">Name</label>
                 <input class="input" type="text" id="name" name="name" placeholder="Your name.." required>
+                <error-output class="text-error" for="text"></error-output>
             </div>
             <div class="row-content">
                 <label class="label text" for="profile">Profile image</label>
@@ -158,6 +158,8 @@
             </div>
         </form>
     </div>
+    <script defer src="../js/payroll_form.js"></script>
+    <script defer src="../Js/EmployeePayroll.js"></script>
 </body>
 
 </html>
