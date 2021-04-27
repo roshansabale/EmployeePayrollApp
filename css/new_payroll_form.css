@@ -197,10 +197,10 @@ error-output {
     color: red;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 960px) {
     .form {
         margin-top: 10px;
-        width: 85%;
+        width: 100%;
         padding: 44px 20px;
     }
     .row {
@@ -214,6 +214,7 @@ error-output {
     }
     .cancelButton {
         margin-left: 0px;
+        align-items: center;
     }
     .submit-reset {
         width: 100%;
