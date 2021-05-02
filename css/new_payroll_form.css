@@ -197,7 +197,7 @@ error-output {
     color: red;
 }
 
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 980px) {
     .form {
         margin-top: 10px;
         width: 100%;
@@ -208,6 +208,9 @@ error-output {
     }
     .uploadButton {
         justify-content: flex-start;
+    }
+    .profile-radio-content {
+        flex-flow: row wrap;
     }
     .profile-radio-button {
         flex-flow: column wrap;
