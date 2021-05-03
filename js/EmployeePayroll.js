@@ -55,13 +55,14 @@ class EmployeePayrollData {
         if (diff / (1000 * 60 * 60 * 24) > 30)
             throw 'Start Date is beyond 30 Days!';
         this._startDate = startDate;
+        console.log("Start date from setter", this._startDate);
     }
 
     //method
     toString() {
-        const option = { year: 'numeric', month: 'long', day: 'numeric' };
-        const empDate = this.startDate === undefined ? "undefined" :
-            this.startDate.toLocaleDateString("en-US", option);
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const empDate = this.startDate == undefined ? "undefined" : this.startDate.toLocaleDateString('en-US', options);
+        console.log("Empdate", empDate, "Startdate", this.startDate);
         return "id= " + this.id + ", name= " + this.name + ", salary= " + this.salary + ", Gender: " +
             this.gender + ", Start Date: " + empDate + ", Department: " + this.department + ", Note: " + this.note;
     }
