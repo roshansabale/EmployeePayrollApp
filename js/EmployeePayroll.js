@@ -1,13 +1,13 @@
 class EmployeePayrollData {
+    id;
+    // get id() { return this._id; }
+    // set id(id) {
+    //     let idRegex = RegExp('[1-9]+[0-9]?');
 
-    get id() { return this._id; }
-    set id(id) {
-        let idRegex = RegExp('[1-9]+[0-9]?');
-
-        if (idRegex.test(id))
-            this._id = id;
-        else throw 'ID is incorrect'
-    }
+    //     if (idRegex.test(id))
+    //         this._id = id;
+    //     else throw 'ID is incorrect'
+    // }
 
     //Getter and setter
     get name() { return this._name; }
@@ -52,7 +52,7 @@ class EmployeePayrollData {
         let now = new Date();
         if (startDate > now) throw 'Start Date is a Future Date!';
         var diff = Math.abs(now.getTime() - startDate.getTime());
-        if (diff / (1000 * 60 * 60 * 24) > 30)
+        if ((diff / (1000 * 60 * 60 * 24) > 30))
             throw 'Start Date is beyond 30 Days!';
         this._startDate = startDate;
         console.log("Start date from setter", this._startDate);
