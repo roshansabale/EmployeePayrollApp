@@ -46,13 +46,13 @@ const createInnerHtml = () => {
     for (const empPayrollData of empPayrollList) {
         innerHtml = `${innerHtml}  
     <tr>
-    <td><img class="profile" src="${empPayrollData._profilePic}" alt=""></td>
-    <td>${empPayrollData._name}</td>
-    <td>${empPayrollData._gender}</td>
-    <td>${getDeptHtml(empPayrollData._department)}</td> 
-    <td>${empPayrollData._salary}</td>
-    <td>${stringifyDate(empPayrollData._startDate)}</td>
-    <td>
+    <td data-label="ProfilePic"><img class="profile" src="${empPayrollData._profilePic}" alt=""></td>
+    <td data-label="Name">${empPayrollData._name}</td>
+    <td data-label="Gender">${empPayrollData._gender}</td>
+    <td data-label="Department">${getDeptHtml(empPayrollData._department)}</td> 
+    <td data-label="Salary">${empPayrollData._salary}</td>
+    <td data-label="StartDate">${stringifyDate(empPayrollData._startDate)}</td>
+    <td data-label="Actions">
        <img id="${empPayrollData.id}"  onclick="remove(this)" 
             src="../assets/icons/delete-black-18dp.svg" alt="delete">
        <img id="${empPayrollData.id}" onclick="update(this)"

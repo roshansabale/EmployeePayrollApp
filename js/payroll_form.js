@@ -44,7 +44,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     salary.addEventListener('input', function() {
         setTextValue('.salary-output', salary.value);
     });
-
     checkForUpdate();
 });
 
@@ -53,17 +52,20 @@ const save = (event) => {
     event.stopPropagation();
     try {
         setEmployeePayrollObject();
-        if (site_properties.use_local_storage.match("true")) {
-            createAndUpdateStorage();
-            resetForm();
-            window.location.replace(site_properties.home_page);
-        } else {
-            createOrUpdateEmployeePayroll();
+        if (checkGender() == true) {
+            if (site_properties.use_local_storage.match("true")) {
+                createAndUpdateStorage();
+                resetForm();
+                window.location.replace(site_properties.home_page);
+            } else {
+                createOrUpdateEmployeePayroll();
+            }
         }
     } catch (e) {
         return;
     }
 }
+
 
 const setEmployeePayrollObject = () => {
     if (!isUpdate && site_properties.use_local_storage.match("true")) {
@@ -263,4 +265,16 @@ const createOrUpdateEmployeePayroll = () => {
         .catch(error => {
             throw error;
         });
+}
+
+const checkGender = () => {
+    var getSelectedValue = document.querySelector('input[name="gender"]:checked');
+    var output = document.querySelector('.gender-error');
+    if (getSelectedValue != null) {
+        setTextValue('.gender-error', "")
+        return true;
+    } else {
+        setTextValue('.gender-error', "Please select gender");
+        return flase;
+    }
 }

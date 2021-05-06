@@ -34,12 +34,14 @@ body {
     font: normal normal bold 20px/25px Montserrat;
     font-family: "Montserrat", sans-serif;
     letter-spacing: 0px;
+    padding: 10px;
     color: #82a70c;
     text-transform: capitalize;
 }
 
 .emp-payroll {
     color: #42515f;
+    padding: 10px;
 }
 
 * {

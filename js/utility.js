@@ -7,7 +7,11 @@ const stringifyDate = (date) => {
 
 const checkName = (name) => {
     let nameRegex = RegExp('^[A-Z]{1}[a-zA-Z]{3,}$');
-    if (!nameRegex.test(name)) throw 'Name is Incorrect!';
+    if (!nameRegex.test(name)) {
+        throw 'Name is Incorrect!';
+    } else {
+        return true;
+    }
 }
 
 const checkStartDate = (startDate) => {
